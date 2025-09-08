@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"> 
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniMobile</title>
+  <link rel="icon" href="https://i.postimg.cc/jSGbj9jj/Mini-Mobile.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f4ff;
+      margin: 0;
+      padding: 0;
+      font-family: 'Rubik', sans-serif;
+      color: #0040ff;
+    }
+    nav {
+      background-color: #0040ff;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      font-size: 1.1em;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    nav a:hover {
+      background-color: #ffffff;
+      color: #0040ff;
+      transform: scale(1.05);
+    }
+    .content {
+      padding-top: 100px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    .button {
+      padding: 12px 25px;
+      background-color: #0040ff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: white;
+      color: #0040ff;
+      border: 2px solid #0040ff;
+      transform: scale(1.05);
+    }
+    .line {
+      height: 4px;
+      background-color: #0040ff;
+      margin: 40px auto;
+      width: 90%;
+      border-radius: 2px;
+    }
+    .products-title {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: #0040ff;
+      margin-top: 20px;
+    }
+    .products {
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 16px;
+      width: 260px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 64, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 64, 255, 0.15);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .product-card h3 {
+      font-size: 24px;
+      color: #000;
+      margin: 10px 0 5px;
+    }
+    .product-card p {
+      font-size: 1.2em;
+      color: #0040ff;
+      margin: 0;
+      font-weight: bold;
+    }
+    .product-card .paypal-button {
+      margin-top: 15px;
+      width: 100%;
+      background: linear-gradient(135deg, #0040ff, #3f8dff);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      padding: 10px 0;
+      display: inline-block;
+      text-align: center;
+    }
+    .product-card .paypal-button:hover {
+      background: white;
+      color: #0040ff;
+      border: 2px solid #0040ff;
+      transform: scale(1.05);
+    }
+    .product-card .badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4d4d;
+      color: white;
+      padding: 2px 10px;
+      border-radius: 8px;
+      font-size: 0.9em;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      opacity: 85%;
+    }
+    @media screen and (max-width: 600px) {
+      nav { flex-direction: column; padding: 10px; }
+      nav a { margin: 0 1px; font-size: 1em; }
+      .header h1 { font-size: 2em; }
+      .header p { font-size: 1.2em; }
+      .button { font-size: 1em; padding: 10px 20px; }
+      .products { flex-direction: column; align-items: center; }
+      .product-card { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">ראשי</a>
+    <a href="#">מוצרים</a>
+  </nav>
+  <div class="content">
+    <div class="header">
+      <h1>MiniMobile</h1>
+      <p>המיניפון הקטן שהופך הכל לנוח!</p>
+      <a href="#products" class="button">למוצרים שלנו</a>
+    </div>
+  </div>
+  <div class="line"></div>
+  <h2 class="products-title">המוצרים שלנו</h2>
+  <div class="products" id="products">
+    <!-- מיניפון תכלת -->
+    <div class="product-card">
+      <div class="badge">משלוח חינם</div>
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S233d2fa83edd45a3b4e0d2660938342ba.jpg_960x960q75.jpg_.avif" alt="מיניפון תכלת">
+      <h3>מיניפון תכלת</h3>
+      <p>₪199.90</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="naftalimspht@gmail.com">
+        <input type="hidden" name="item_name" value="מיניפון תכלת">
+        <input type="hidden" name="amount" value="199.90">
+        <input type="hidden" name="currency_code" value="ILS">
+        <input type="submit" value="קנה עכשיו ב-PayPal" class="paypal-button">
+      </form>
+    </div>
+    <!-- מיניפון ורוד -->
+    <div class="product-card">
+      <div class="badge">משלוח חינם</div>
+      <img src="https://ae-pic-a1.aliexpress-media.com/kf/S569a820a00404bee9a5eb3e5d8163c34u.jpg_960x960q75.jpg_.avif" alt="מיניפון ורוד">
+      <h3>מיניפון ורוד</h3>
+      <p>₪199.90</p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="naftalimspht@gmail.com">
+        <input type="hidden" name="item_name" value="מיניפון ורוד">
+        <input type="hidden" name="amount" value="199.90">
+        <input type="hidden" name="currency_code" value="ILS">
+        <input type="submit" value="קנה עכשיו ב-PayPal" class="paypal-button">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
