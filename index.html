@@ -238,6 +238,66 @@
       transform: scale(1.05);
       box-shadow: 0 6px 15px rgba(0, 64, 255, 0.3);
     }
+
+    /* FAQ */
+    .faq-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      color: #0040ff;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0,64,255,0.1);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: #0040ff;
+      color: #fff;
+      padding: 15px;
+      text-align: right;
+      font-size: 1.1em;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+    .faq-question:hover {
+      background: #0033cc;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 15px;
+      background: #f7f9ff;
+    }
+    .faq-answer p {
+      margin: 15px 0;
+      color: #333;
+      font-size: 1em;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding: 15px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
   </style>
 </head>
 <body>
@@ -278,6 +338,38 @@
 
   </div>
 
+  <div class="line"></div>
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2>שאלות ותשובות</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">מה זה מינימובייל?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>מינימובייל הוא טלפון קטן, נוח וקל לשימוש שמתאים לכל כיס.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">האם אפשרי לשים כרטיס סים?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>כן, הכרטיס כמובן לא מגיע יחד עם הטלפון.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">כמה זמן לוקח למינימובייל להגיע?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>המשלוח לוקח בין 3 ל-14 ימי עסקים.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">מה אפשר להוריד בו?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>הטלפון מכיל google play, ככה שכל אפליקציה שקיימת כמעט.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">איך מזמינים?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>מזמינים את הטלפון ללא תשלום, ונציג יחזור אליכם לפרטים.</p></div>
+    </div>
+
+  </div>
+
   <!-- פופאפ הזמנה -->
   <div id="orderModal">
     <div id="orderModalContent">
@@ -302,6 +394,14 @@
     function closeModal() {
       document.getElementById('orderModal').style.display = 'none';
     }
+
+    // FAQ toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
