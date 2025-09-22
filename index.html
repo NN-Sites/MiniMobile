@@ -169,7 +169,7 @@
       .product-card { width: 90%; }
     }
 
-    /* ==== פופאפ חדש ==== */
+    /* ==== פופאפ הזמנה ==== */
     #orderModal {
       display: none;
       position: fixed;
@@ -267,7 +267,7 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* FAQ */
+    /* ==== FAQ ==== */
     .faq-section { max-width: 800px; margin: 50px auto; padding: 20px; }
     .faq-section h2 { text-align: center; color: #0040ff; margin-bottom: 30px; font-size: 2em; }
     .faq-item { background: #fff; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,64,255,0.1); overflow: hidden; }
@@ -278,6 +278,32 @@
     .faq-item.active .faq-answer { max-height: 200px; padding: 15px; }
     .faq-icon { transition: transform 0.3s ease; }
     .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+  .reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    padding: 20px 0;
+  }
+  .reviews img {
+    width: 180px; /* יותר גדול */
+    height: 180px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 12px; /* עגול פחות, נראה מרובע */
+    transition: transform 0.3s ease;
+  }
+  .reviews img:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 600px) {
+    .reviews img {
+      width: 120px;
+      height: 120px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -339,7 +365,6 @@
     </div>
   </div>
 
-  <!-- ===== פופאפ חדש ===== -->
   <div id="orderModal">
     <div id="orderModalContent">
       <span onclick="closeModal()">&times;</span>
@@ -363,20 +388,38 @@
     </div>
   </div>
 
+
+  <div class="line"></div>
+  <section class="reviews">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sabbea04bd8e14be191b6cbb8c026d695j.jpg_.webp" alt="לקוח">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A7493f934a27945a6ab7cb474dabf99e4a.jpg_.webp" alt="לקוחה">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Adfa89e16f5b1418bb70e20a9ec4c8b60n.jpg_.webp" alt="לקוח">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Aefeec59ee80541b3b8d331c97e866c43F.jpg_.webp" alt="לקוחה">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8122ec0f254443cf8f3bcd153eca4da3B.jpg_.webp" alt="לקוח">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0aec8d1284f34c09b94f95f88736bbcfu.jpg_.webp" alt="לקוחה">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Acb38b4cef0304db49e4fa68331d0c0ece.jpg_.webp" alt="לקוחה">
+     <img src="https://ae-pic-a1.aliexpress-media.com/kf/S96341161b8de4b0ea3d4ebf106d58b98l.jpg_.webp" alt="לקוחה">
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A9646b4920f314b0198109057b13efb5dO.jpg_.webp" alt="לקוחה">
+  </section>
+
   <script>
-    function openModal(productName, price, imageUrl) {
-      document.getElementById('productTitle').textContent = productName;
-      document.getElementById('productPrice').textContent = price;
-      document.getElementById('productImage').src = imageUrl;
-      document.getElementById('productInput').value = productName;
+    function openModal(title, price, image) {
+      document.getElementById('productTitle').innerText = title;
+      document.getElementById('productPrice').innerText = price;
+      document.getElementById('productImage').src = image;
+      document.getElementById('productInput').value = title + " - " + price;
       document.getElementById('orderModal').style.display = 'flex';
     }
+
     function closeModal() {
       document.getElementById('orderModal').style.display = 'none';
     }
+
+    // FAQ functionality
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
-      item.querySelector('.faq-question').addEventListener('click', () => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
         item.classList.toggle('active');
       });
     });
