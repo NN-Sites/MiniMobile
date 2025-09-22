@@ -169,63 +169,85 @@
       .product-card { width: 90%; }
     }
 
-
+    /* ==== פופאפ חדש ==== */
     #orderModal {
-      display: none; 
+      display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
     #orderModalContent {
-      background: #f7f9ff;
-      padding: 30px;
-      border-radius: 20px;
-      width: 90%; max-width: 400px;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0, 64, 255, 0.2);
-      animation: popup 0.3s ease-out;
-    }
-    @keyframes popup {
-      0% { transform: scale(0.7); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    #orderModalContent span {
-      position: absolute; top: 10px; right: 15px;
-      font-size: 25px; cursor: pointer;
-      color: #0040ff; font-weight: bold;
-    }
-    #orderModalContent h3 {
-      text-align: center;
-      color: #0040ff;
-      margin-bottom: 20px;
-      font-size: 1.8em;
-    }
-    #orderModalContent form {
+      background: #fff;
+      border-radius: 16px;
+      width: 95%;
+      max-width: 900px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: popup 0.3s ease-out;
     }
-    #orderModalContent input, #orderModalContent textarea {
+    #orderModalContent span {
+      position: absolute; 
+      top: 15px; 
+      right: 20px;
+      font-size: 28px; 
+      cursor: pointer;
+      color: #0040ff;
+      font-weight: bold;
+    }
+    .order-container {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      padding: 30px;
+    }
+    .order-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .order-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .order-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .order-details h3 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #0040ff;
+    }
+    .order-details .order-price {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 20px;
+    }
+    .order-details form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .order-details input, .order-details textarea {
       padding: 12px;
       border-radius: 10px;
       border: 1px solid #cce0ff;
       font-size: 1em;
       outline: none;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    #orderModalContent input:focus, #orderModalContent textarea:focus {
-      border-color: #0040ff;
-      box-shadow: 0 0 8px rgba(0, 64, 255, 0.3);
-    }
-    #orderModalContent textarea {
-      resize: none;
-      min-height: 80px;
-    }
-    #orderModalContent button {
+    .order-details textarea { resize: none; min-height: 80px; }
+    .order-details button {
       background: linear-gradient(135deg, #0040ff, #3f8dff);
       color: white;
       border: none;
@@ -236,70 +258,26 @@
       padding: 12px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    #orderModalContent button:hover {
+    .order-details button:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 15px rgba(0, 64, 255, 0.3);
     }
+    @keyframes popup {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
 
-
-    .faq-section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-    }
-    .faq-section h2 {
-      text-align: center;
-      color: #0040ff;
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-    .faq-item {
-      background: #fff;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,64,255,0.1);
-      overflow: hidden;
-    }
-    .faq-question {
-      width: 100%;
-      background: #0040ff;
-      color: #fff;
-      padding: 15px;
-      text-align: right;
-      font-size: 1.1em;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease;
-    }
-    .faq-question:hover {
-      background: #0033cc;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      padding: 0 15px;
-      background: #f7f9ff;
-    }
-    .faq-answer p {
-      margin: 15px 0;
-      color: #333;
-      font-size: 1em;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-      padding: 15px;
-    }
-    .faq-icon {
-      transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
+    /* FAQ */
+    .faq-section { max-width: 800px; margin: 50px auto; padding: 20px; }
+    .faq-section h2 { text-align: center; color: #0040ff; margin-bottom: 30px; font-size: 2em; }
+    .faq-item { background: #fff; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,64,255,0.1); overflow: hidden; }
+    .faq-question { width: 100%; background: #0040ff; color: #fff; padding: 15px; text-align: right; font-size: 1.1em; border: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s ease; }
+    .faq-question:hover { background: #0033cc; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0 15px; background: #f7f9ff; }
+    .faq-answer p { margin: 15px 0; color: #333; font-size: 1em; }
+    .faq-item.active .faq-answer { max-height: 200px; padding: 15px; }
+    .faq-icon { transition: transform 0.3s ease; }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
   </style>
 </head>
 <body>
@@ -319,85 +297,83 @@
   <div class="line"></div>
   <h2 class="products-title">המוצרים שלנו</h2>
   <div class="products" id="products">
-
-
     <div class="product-card">
       <div class="badge">משלוח חינם</div>
       <img src="https://ae-pic-a1.aliexpress-media.com/kf/S233d2fa83edd45a3b4e0d2660938342ba.jpg_960x960q75.jpg_.avif" alt="מיניפון תכלת">
       <h3>מיניפון תכלת</h3>
       <p>₪199.90</p>
-      <button class="form-button" onclick="openModal('מיניפון תכלת')">הזמן עכשיו</button>
+      <button class="form-button" onclick="openModal('מיניפון תכלת','₪199.90','https://ae-pic-a1.aliexpress-media.com/kf/S233d2fa83edd45a3b4e0d2660938342ba.jpg_960x960q75.jpg_.avif')">הזמן עכשיו</button>
     </div>
-
 
     <div class="product-card">
       <div class="badge">משלוח חינם</div>
       <img src="https://ae-pic-a1.aliexpress-media.com/kf/S569a820a00404bee9a5eb3e5d8163c34u.jpg_960x960q75.jpg_.avif" alt="מיניפון ורוד">
       <h3>מיניפון ורוד</h3>
       <p>₪199.90</p>
-      <button class="form-button" onclick="openModal('מיניפון ורוד')">הזמן עכשיו</button>
+      <button class="form-button" onclick="openModal('מיניפון ורוד','₪199.90','https://ae-pic-a1.aliexpress-media.com/kf/S569a820a00404bee9a5eb3e5d8163c34u.jpg_960x960q75.jpg_.avif')">הזמן עכשיו</button>
     </div>
-
   </div>
 
   <div class="line"></div>
-
   <div class="faq-section">
     <h2>שאלות ותשובות</h2>
-
     <div class="faq-item">
       <button class="faq-question">מה זה מינימובייל?<span class="faq-icon">+</span></button>
       <div class="faq-answer"><p>מינימובייל הוא טלפון קטן, נוח וקל לשימוש שמתאים לכל כיס.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">האם אפשרי לשים כרטיס סים?<span class="faq-icon">+</span></button>
       <div class="faq-answer"><p>כן, הכרטיס כמובן לא מגיע יחד עם הטלפון.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">כמה זמן לוקח למינימובייל להגיע?<span class="faq-icon">+</span></button>
       <div class="faq-answer"><p>המשלוח לוקח בין 3 ל-14 ימי עסקים.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">מה אפשר להוריד בו?<span class="faq-icon">+</span></button>
       <div class="faq-answer"><p>הטלפון מכיל google play, ככה שכל אפליקציה שקיימת כמעט.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">איך מזמינים?<span class="faq-icon">+</span></button>
       <div class="faq-answer"><p>מזמינים את הטלפון ללא תשלום, ונציג יחזור אליכם לפרטים.</p></div>
     </div>
-
   </div>
 
-
+  <!-- ===== פופאפ חדש ===== -->
   <div id="orderModal">
     <div id="orderModalContent">
       <span onclick="closeModal()">&times;</span>
-      <h3>הזמנה</h3>
-      <form action="https://formcarry.com/s/usQIn3ixhpY" method="POST">
-        <input type="text" name="name" placeholder="שם מלא" required>
-        <input type="email" name="email" placeholder="מייל" required>
-        <input type="tel" name="phone" placeholder="טלפון" required>
-        <textarea name="address" placeholder="כתובת מלאה" required></textarea>
-        <input type="text" name="product" id="productInput" value="" hidden>
-        <button type="submit" class="form-button">שלח הזמנה</button>
-      </form>
+      <div class="order-container">
+        <div class="order-image">
+          <img id="productImage" src="" alt="מוצר">
+        </div>
+        <div class="order-details">
+          <h3 id="productTitle">שם המוצר</h3>
+          <p class="order-price" id="productPrice"></p>
+          <form action="https://formcarry.com/s/usQIn3ixhpY" method="POST">
+            <input type="text" name="name" placeholder="שם מלא" required>
+            <input type="email" name="email" placeholder="מייל" required>
+            <input type="tel" name="phone" placeholder="טלפון" required>
+            <textarea name="address" placeholder="כתובת מלאה" required></textarea>
+            <input type="text" name="product" id="productInput" value="" hidden>
+            <button type="submit" class="form-button">שלח הזמנה</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    function openModal(productName) {
+    function openModal(productName, price, imageUrl) {
+      document.getElementById('productTitle').textContent = productName;
+      document.getElementById('productPrice').textContent = price;
+      document.getElementById('productImage').src = imageUrl;
       document.getElementById('productInput').value = productName;
       document.getElementById('orderModal').style.display = 'flex';
     }
     function closeModal() {
       document.getElementById('orderModal').style.display = 'none';
     }
-
-
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
       item.querySelector('.faq-question').addEventListener('click', () => {
