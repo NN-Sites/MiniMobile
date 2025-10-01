@@ -1,310 +1,51 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl"> 
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MiniMobile</title>
-  <meta name="description" content="MiniMobile - המיניפון הקטן שהופך הכל לנוח! טלפונים קטנים, חכמים וזולים עם משלוח חינם. מתאים לכל כיס ונוח לשימוש.">
-  <meta name="keywords" content="מינימובייל, MiniMobile, טלפון קטן, טלפונים קטנים, סמארטפון קטן, טלפון קומפקטי, טלפון זול, טלפון עם סים, טלפון נייד קטן, טלפון נסיעות, סמארטפון קל, טלפון לילדים, טלפון לגיבוי, טלפון חכם קטן, דרופשיפינג טלפונים, לקנות טלפון זול, טלפון קומפקטי אונליין, טלפונים חדשים בזול">
   <link rel="icon" href="https://i.postimg.cc/jSGbj9jj/Mini-Mobile.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f0f4ff;
-      margin: 0;
-      padding: 0;
-      font-family: 'Rubik', sans-serif;
-      color: #0040ff;
-    }
-    nav {
-      background-color: #0040ff;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-      font-size: 1.1em;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    nav a:hover {
-      background-color: #ffffff;
-      color: #0040ff;
-      transform: scale(1.05);
-    }
-    .content {
-      padding-top: 100px;
-      text-align: center;
-    }
-    .header h1 {
-      font-size: 60px;
-      margin-bottom: 10px;
-    }
-    .header p {
-      font-size: 1.5em;
-      margin-bottom: 30px;
-    }
-    .button {
-      padding: 12px 25px;
-      background-color: #0040ff;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1em;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      display: inline-block;
-    }
-    .button:hover {
-      background-color: white;
-      color: #0040ff;
-      border: 2px solid #0040ff;
-      transform: scale(1.05);
-    }
-    .line {
-      height: 4px;
-      background-color: #0040ff;
-      margin: 40px auto;
-      width: 90%;
-      border-radius: 2px;
-    }
-    .products-title {
-      text-align: center;
-      font-size: 2em;
-      font-weight: bold;
-      color: #0040ff;
-      margin-top: 20px;
-    }
-    .products {
-      text-align: center;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    .product-card {
-      background-color: #fff;
-      border-radius: 16px;
-      width: 260px;
-      padding: 20px;
-      box-shadow: 0 10px 25px rgba(0, 64, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 64, 255, 0.15);
-    }
-    .product-card img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .product-card h3 {
-      font-size: 24px;
-      color: #000;
-      margin: 10px 0 5px;
-    }
-    .product-card p {
-      font-size: 1.2em;
-      color: #0040ff;
-      margin: 0;
-      font-weight: bold;
-    }
-    .product-card .form-button {
-      margin-top: 15px;
-      width: 100%;
-      background: linear-gradient(135deg, #0040ff, #3f8dff);
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-size: 1em;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      padding: 10px 0;
-      display: inline-block;
-      text-align: center;
-    }
-    .product-card .form-button:hover {
-      background: white;
-      color: #0040ff;
-      border: 2px solid #0040ff;
-      transform: scale(1.05);
-    }
-    .product-card .badge {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #ff4d4d;
-      color: white;
-      padding: 2px 10px;
-      border-radius: 8px;
-      font-size: 0.9em;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      opacity: 85%;
-    }
-    @media screen and (max-width: 600px) {
-      nav { flex-direction: column; padding: 10px; }
-      nav a { margin: 0 1px; font-size: 1em; }
-      .header h1 { font-size: 2em; }
-      .header p { font-size: 1.2em; }
-      .button { font-size: 1em; padding: 10px 20px; }
-      .products { flex-direction: column; align-items: center; }
-      .product-card { width: 90%; }
-    }
+    body { background-color: #f0f4ff; margin:0; padding:0; font-family:'Rubik',sans-serif; color:#0040ff; }
+    nav { background-color: #0040ff; color: #fff; padding: 15px 20px; display:flex; justify-content:center; position:fixed; top:0; width:100%; z-index:999; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; margin:0 10px; font-weight:500; font-size:1.1em; padding:8px 16px; border-radius:20px; transition:0.3s; }
+    nav a:hover { background-color:#fff;color:#0040ff; transform:scale(1.05);}
+    .content { padding-top:100px; text-align:center; }
+    .header h1 { font-size:60px; margin-bottom:10px; }
+    .header p { font-size:1.5em; margin-bottom:30px; }
+    .button { padding:12px 25px; background-color:#0040ff;color:white;border-radius:8px;text-decoration:none;font-size:1.1em;transition:0.3s; display:inline-block; }
+    .button:hover { background-color:white;color:#0040ff;border:2px solid #0040ff; transform:scale(1.05);}
+    .line { height:4px; background-color:#0040ff; margin:40px auto; width:90%; border-radius:2px; }
+    .products-title { text-align:center; font-size:2em; font-weight:bold; color:#0040ff; margin-top:20px; }
+    .products { text-align:center; padding:20px; display:flex; justify-content:center; flex-wrap:wrap; gap:30px; }
+    .product-card { background-color:#fff;border-radius:16px;width:260px;padding:20px;box-shadow:0 10px 25px rgba(0,64,255,0.1); transition:0.3s; position:relative; }
+    .product-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,64,255,0.15);}
+    .product-card img { width:100%; border-radius:12px; margin-bottom:15px; }
+    .product-card h3 { font-size:24px; color:#000; margin:10px 0 5px; }
+    .product-card p { font-size:1.2em; color:#0040ff; margin:0; font-weight:bold; }
+    .product-card .form-button { margin-top:15px; width:100%; background:linear-gradient(135deg,#0040ff,#3f8dff); color:white; border:none; border-radius:10px; font-size:1em; font-weight:bold; cursor:pointer; padding:10px 0; display:inline-block; text-align:center; transition:0.3s; }
+    .product-card .form-button:hover { background:white; color:#0040ff; border:2px solid #0040ff; transform:scale(1.05);}
+    .product-card .badge { position:absolute; top:20px; right:20px; background:#ff4d4d; color:white; padding:2px 10px; border-radius:8px; font-size:0.9em; font-weight:bold; opacity:85%; }
+    @media screen and (max-width:600px){ nav{flex-direction:column;padding:10px;} nav a{margin:0 1px;font-size:1em;} .header h1{font-size:2em;} .header p{font-size:1.2em;} .button{font-size:1em;padding:10px 20px;} .products{flex-direction:column;align-items:center;} .product-card{width:90%;} }
 
-    /* ==== פופאפ הזמנה ==== */
-    #orderModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    #orderModalContent {
-      background: #fff;
-      border-radius: 16px;
-      width: 95%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-      animation: popup 0.3s ease-out;
-    }
-    #orderModalContent span {
-      position: absolute; 
-      top: 15px; 
-      right: 20px;
-      font-size: 28px; 
-      cursor: pointer;
-      color: #0040ff;
-      font-weight: bold;
-    }
-    .order-container {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-      padding: 30px;
-    }
-    .order-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .order-image img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-    .order-details {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .order-details h3 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #0040ff;
-    }
-    .order-details .order-price {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #000;
-      margin-bottom: 20px;
-    }
-    .order-details form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .order-details input, .order-details textarea {
-      padding: 12px;
-      border-radius: 10px;
-      border: 1px solid #cce0ff;
-      font-size: 1em;
-      outline: none;
-    }
-    .order-details textarea { resize: none; min-height: 80px; }
-    .order-details button {
-      background: linear-gradient(135deg, #0040ff, #3f8dff);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 1.1em;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 12px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .order-details button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 64, 255, 0.3);
-    }
-    @keyframes popup {
-      0% { transform: scale(0.7); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+    /* פופאפ הזמנה */
+    #orderModal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000; }
+    #orderModalContent { background:#fff; border-radius:16px; width:95%; max-width:900px; display:flex; flex-direction:column; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.25); animation:popup 0.3s ease-out; }
+    #orderModalContent span { position:absolute; top:15px; right:20px; font-size:28px; cursor:pointer; color:#0040ff; font-weight:bold; }
+    .order-container { display:flex; flex-direction:row; gap:30px; padding:30px; }
+    .order-image { flex:1; display:flex; justify-content:center; align-items:center; }
+    .order-image img { max-width:100%; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+    .order-details { flex:1; display:flex; flex-direction:column; justify-content:center; }
+    .order-details h3 { font-size:2em; margin-bottom:10px; color:#0040ff;}
+    .order-details .order-price { font-size:1.5em; font-weight:bold; color:#000; margin-bottom:20px; }
+    .order-details form { display:flex; flex-direction:column; gap:12px; }
+    .order-details input, .order-details textarea { padding:12px; border-radius:10px; border:1px solid #cce0ff; font-size:1em; outline:none; }
+    .order-details textarea { resize:none; min-height:80px; }
+    .order-details button { background:linear-gradient(135deg,#0040ff,#3f8dff); color:white; border:none; border-radius:12px; font-size:1.1em; font-weight:bold; cursor:pointer; padding:12px; transition:0.2s; }
+    .order-details button:hover { transform:scale(1.05); box-shadow:0 6px 15px rgba(0,64,255,0.3); }
+    @keyframes popup {0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;}}
 
-    /* ==== FAQ ==== */
-    .faq-section { max-width: 800px; margin: 50px auto; padding: 20px; }
-    .faq-section h2 { text-align: center; color: #0040ff; margin-bottom: 30px; font-size: 2em; }
-    .faq-item { background: #fff; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,64,255,0.1); overflow: hidden; }
-    .faq-question { width: 100%; background: #0040ff; color: #fff; padding: 15px; text-align: right; font-size: 1.1em; border: none; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s ease; }
-    .faq-question:hover { background: #0033cc; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding: 0 15px; background: #f7f9ff; }
-    .faq-answer p { margin: 15px 0; color: #333; font-size: 1em; }
-    .faq-item.active .faq-answer { max-height: 200px; padding: 15px; }
-    .faq-icon { transition: transform 0.3s ease; }
-    .faq-item.active .faq-icon { transform: rotate(45deg); }
-
-  .reviews {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #fff;
-    padding: 20px 0;
-  }
-  .reviews img {
-    width: 180px; /* יותר גדול */
-    height: 180px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 12px; /* עגול פחות, נראה מרובע */
-    transition: transform 0.3s ease;
-  }
-  .reviews img:hover {
-    transform: scale(1.05);
-  }
-
-  @media screen and (max-width: 600px) {
-    .reviews img {
-      width: 120px;
-      height: 120px;
-    }
-  }
-  
   </style>
 </head>
 <body>
@@ -331,38 +72,12 @@
       <p>₪199.90</p>
       <button class="form-button" onclick="openModal('מיניפון תכלת','₪199.90','https://ae-pic-a1.aliexpress-media.com/kf/S233d2fa83edd45a3b4e0d2660938342ba.jpg_960x960q75.jpg_.avif')">הזמן עכשיו</button>
     </div>
-
     <div class="product-card">
       <div class="badge">משלוח חינם</div>
       <img src="https://ae-pic-a1.aliexpress-media.com/kf/S569a820a00404bee9a5eb3e5d8163c34u.jpg_960x960q75.jpg_.avif" alt="מיניפון ורוד">
       <h3>מיניפון ורוד</h3>
       <p>₪199.90</p>
       <button class="form-button" onclick="openModal('מיניפון ורוד','₪199.90','https://ae-pic-a1.aliexpress-media.com/kf/S569a820a00404bee9a5eb3e5d8163c34u.jpg_960x960q75.jpg_.avif')">הזמן עכשיו</button>
-    </div>
-  </div>
-
-  <div class="line"></div>
-  <div class="faq-section">
-    <h2>שאלות ותשובות</h2>
-    <div class="faq-item">
-      <button class="faq-question">מה זה מינימובייל?<span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>מינימובייל הוא טלפון קטן, נוח וקל לשימוש שמתאים לכל כיס.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">האם אפשרי לשים כרטיס סים?<span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>כן, הכרטיס כמובן לא מגיע יחד עם הטלפון.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">כמה זמן לוקח למינימובייל להגיע?<span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>המשלוח לוקח בין 3 ל-14 ימי עסקים.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">מה אפשר להוריד בו?<span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>הטלפון מכיל google play, ככה שכל אפליקציה שקיימת כמעט.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">איך מזמינים?<span class="faq-icon">+</span></button>
-      <div class="faq-answer"><p>מזמינים את הטלפון ללא תשלום, ונציג יחזור אליכם לפרטים.</p></div>
     </div>
   </div>
 
@@ -376,7 +91,7 @@
         <div class="order-details">
           <h3 id="productTitle">שם המוצר</h3>
           <p class="order-price" id="productPrice"></p>
-          <form action="https://formcarry.com/s/usQIn3ixhpY" method="POST">
+          <form id="orderForm">
             <input type="text" name="name" placeholder="שם מלא" required>
             <input type="email" name="email" placeholder="מייל" required>
             <input type="tel" name="phone" placeholder="טלפון" required>
@@ -390,22 +105,22 @@
   </div>
 
 
-  <div class="line"></div>
-    <h2 class="reviews">ביקורות של לקוחות</h2>
-
-  <section class="reviews">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sabbea04bd8e14be191b6cbb8c026d695j.jpg_.webp" alt="לקוח">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A7493f934a27945a6ab7cb474dabf99e4a.jpg_.webp" alt="לקוחה">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Adfa89e16f5b1418bb70e20a9ec4c8b60n.jpg_.webp" alt="לקוח">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Aefeec59ee80541b3b8d331c97e866c43F.jpg_.webp" alt="לקוחה">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8122ec0f254443cf8f3bcd153eca4da3B.jpg_.webp" alt="לקוח">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0aec8d1284f34c09b94f95f88736bbcfu.jpg_.webp" alt="לקוחה">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Acb38b4cef0304db49e4fa68331d0c0ece.jpg_.webp" alt="לקוחה">
-     <img src="https://ae-pic-a1.aliexpress-media.com/kf/S96341161b8de4b0ea3d4ebf106d58b98l.jpg_.webp" alt="לקוחה">
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A9646b4920f314b0198109057b13efb5dO.jpg_.webp" alt="לקוחה">
-  </section>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
   <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyARjSkgcKQwyykrMO1y9WRVU151EJmr9AM",
+      authDomain: "minimobiledashboard.firebaseapp.com",
+      projectId: "minimobiledashboard",
+      storageBucket: "minimobiledashboard.appspot.com",
+      messagingSenderId: "949751968495",
+      appId: "1:949751968495:web:e2a060d1b7787d3e7ae11a",
+      measurementId: "G-773JZCLCFP"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
     function openModal(title, price, image) {
       document.getElementById('productTitle').innerText = title;
       document.getElementById('productPrice').innerText = price;
@@ -418,13 +133,24 @@
       document.getElementById('orderModal').style.display = 'none';
     }
 
-    // FAQ functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
+    document.getElementById('orderForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        address: this.address.value,
+        product: this.product.value,
+        timestamp: new Date().toISOString()
+      };
+      const newOrderKey = db.ref().child('orders').push().key;
+      const updates = {};
+      updates['/orders/' + newOrderKey] = formData;
+      db.ref().update(updates).then(() => {
+        alert('ההזמנה נשלחה בהצלחה!');
+        closeModal();
+        this.reset();
+      }).catch(err => alert('שגיאה בשליחת ההזמנה: ' + err));
     });
   </script>
 </body>
